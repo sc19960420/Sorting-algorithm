@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>冒泡排序</title>
+    <style>
+        html,body{
+            height: 100%;
+            background: #E6E6E6;
+            margin: 0;
+        }
+        h4{
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    原数据 ： ['0','5','6','7','8','9','1','2','3','4']<br>
+    排序之后的数据 : ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]<br>
+
+     <ol>
+        <li>
+            <h4>基本思想：</h4>在长度为N的无序数组中，第一次遍历n-1个数，找到最小的数值与第一个元素交换；<br>
+            第二次遍历n-2个数，找到最小的数值与第二个元素交换；<br>
+            。。。<br>
+            第n-1次遍历，找到最小的数值与第n-1个元素交换，排序完成。<br>
+        </li>
+        <li> 
+            <h4>过程：</h4>
+        </li>
+        <img src="http://www.runoob.com/wp-content/uploads/2015/09/12401" alt="">
+
+    </ol>
+    <div style="text-align:center;color:#999;">
+        素材来源：菜鸟教程http://www.runoob.com
+    </div>
+
+
+    <script>
+        // 冒泡排序
+        var arry = ['0','5','6','7','8','9','1','2','3','4'];
+        var i,j;
+        // 遍历数组中的所有数据
+        for(var i = 0 ; i < arry.length ; i ++){
+            // 让 索引小于 i 索引的两个值，相互比较
+            for(var j = 0 ; j < i ; j ++){
+                // 数据 i 的索引值，小于当前数据 j 的索引值数据
+                if(arry[i] < arry[j]){
+                    // 交换数据
+                    var  b = arry[i] //b = 1   arry[i] = 1
+                    arry[i] = arry[j]; // arry[i] == 9       arry[j] =  9
+                    arry[j] = b;
+                }
+            }
+        }
+        console.log(arry)
+    </script>
+</body>
+</html>

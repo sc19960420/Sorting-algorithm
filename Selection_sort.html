@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选择排序</title>
+    <style>
+        html,body{
+            height: 100%;
+            background: #E6E6E6;
+            margin: 0;
+        }
+        h4{
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    原数据 ： ['0','5','6','7','8','9','1','2','3','4']<br>
+    排序之后的数据 : ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]<br>
+
+    <ol>
+        <li>
+            <h4>基本思想：</h4>两个数比较大小，较大的数下沉，较小的数冒起来。
+        </li>
+        <li> 
+            <h4>过程：</h4>
+            <ol>
+                <li>比较相邻的两个数据，如果第二个数小，就交换位置。</li>
+                <li>从后向前两两比较，一直到比较最前两个数据。最终最小数被交换到起始的位置，这样第一个最小数的位置就排好了。</li>
+                <li>继续重复上述过程，依次将第2.3...n-1个最小数排好位置。</li>
+            </ol>
+        </li>
+        <img src="http://www.runoob.com/wp-content/uploads/2015/09/1240" alt="">
+
+    </ol>
+    <div style="text-align:center;color:#999;">
+        素材来源：菜鸟教程http://www.runoob.com
+    </div>
+
+    <script>
+        // 选择排序 
+        var arry = ['0','5','6','7','8','9','1','2','3','4'];
+        // 第一次遍历的长度为arry.length - 1
+        for (var i = 0; i < arry.length - 1; i++) {
+            // 代表当前变量的最少数据的索引值
+            var minindex = i;
+            // 遍历的值比当前 i 的索引值高1位的数组中的值，与之相比较，得出最小数据的索引
+            for( var j = i + 1 ; j < arry.length ; j ++ ){
+                // 如果当前遍历的索引值， 小于小一位的i 的值
+                if (arry[j] < arry[minindex]) {
+                    // 把当前的索引 i 和 i+ 1 之后的所有值取出最小值，赋值给 minindex
+                    minindex = j;
+                }
+            }
+            if (minindex != i) {
+                // 交换最小数据
+                var temp = arry[i]
+                arry[i] = arry[minindex]
+                arry[minindex] = temp;
+            }
+        }
+        console.log(arry);
+    </script>
+</body>
+</html>
